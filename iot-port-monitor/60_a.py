@@ -28,9 +28,9 @@ def fetch_ss_state(k, port_list):
 
 def create_record(metric, port, value):
 	record = {}
-	record['metric'] = metric
+	record['metric'] = 'iot-port'
 	record['endpoint'] = os.uname()[1]
-	record['tags'] = 'srv=iotdevice-ms,port=' + port
+	record['tags'] = 'srv=' + metric + ',port=' + port
 	record['value'] = value
 	record['timestamp'] = int(time.time()) 
 	record['counterType'] = 'GAUGE'
