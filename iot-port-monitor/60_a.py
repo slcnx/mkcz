@@ -23,6 +23,7 @@ iot_dict = {
     "iotpay-ms": ["5017", "6017"],
     "iotdefense-ms": ["5018", "6018"],
     "iotacl-ms": ["5032", "6032"],
+    "iotinfo-ms": ["5020", "6020"],
     "iotauthority-ms": ["5021", "6021"],
     "iotauthority-master": ["5022", "6022"],
     "datasync-master": ["5023", "6023"],
