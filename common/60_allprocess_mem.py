@@ -17,7 +17,7 @@ def create_record(process,type_,value):
   record = {}
   record['metric'] = 'custom'
   record['endpoint'] = os.uname()[1]
-  record['tags'] = "process=%s,tag=%s" % process,type_
+  record['tags'] = "process=%s,tag=%s" % (process,type_)
   record['value'] = value.strip()
   record['timestamp'] = int(time.time())
   record['counterType'] = 'GAUGE'
