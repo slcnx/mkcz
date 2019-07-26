@@ -6,10 +6,9 @@ import  time,os
 
 def get_names():
   # get all processes name
-  p1 = Popen(["ss","-tanp"], stdout=PIPE)
-  p2 = Popen(["grep", "-Po", "(?<=users:\(\(\")[\w-]+"], stdin=p1.stdout, stdout=PIPE)
-  raw_data = Popen(["sort","-u"], stdin=p2.stdout, stdout=PIPE)
-  allProcesses = raw_data.communicate()[0].decode().split()
+  # grep 'Name' /proc/*/status | awk '{print $NF}' | sort -u | grep -v grep
+  raw_data = os.popen("""grep 'Name' /proc/*/status | awk '{print $NF}' | sort -u | grep -v grep | grep -v 60_allprocess """)
+  allProcesses = raw_data.read().split()
   return allProcesses
 
 
